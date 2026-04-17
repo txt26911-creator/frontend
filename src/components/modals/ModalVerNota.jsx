@@ -38,7 +38,7 @@ const ModalVerNota = ({show, onHide, idVenta}) => {
     useEffect(() => {
     if (!idVenta || !show) return;
     handleSave();
-}, [idVenta, show])
+}, [idVenta, show, handleSave])
 
 const generarTicket = async () => {
     const doc = new jsPDF({
