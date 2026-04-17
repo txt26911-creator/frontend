@@ -192,7 +192,7 @@ const generarTicket = async () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        (detalleProductos.length == 0) ? (
+                                        (detalleProductos.length === 0) ? (
                                             <tr><td colSpan={4}>Sin productos</td></tr>
                                         ) : (
                                             detalleProductos.map((item) => (

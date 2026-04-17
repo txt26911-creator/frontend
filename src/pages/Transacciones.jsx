@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import Spinner from 'react-bootstrap/Spinner';
 import Autosuggest from 'react-autosuggest'
 import '../styles/ventas.css'
 import Swal from 'sweetalert2'
 
-import { Card, Col, FormGroup, Input, InputGroup, Row,  Button, Container, Form, ModalTitle, } from "react-bootstrap";
+import { Card, Col, FormGroup,  InputGroup, Row,  Button, Container, Form, } from "react-bootstrap";
 import ModalVerNota from "../components/modals/ModalVerNota";
 
 const Transacciones = () => {
