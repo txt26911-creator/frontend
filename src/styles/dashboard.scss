@@ -1,0 +1,38 @@
+.dashboard {
+  padding: 20px;
+  top: 20%;
+
+  h1 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    display: flex;
+
+    .card {
+      background-color: #1f1f3a;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 300px; // flexible y responsive
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}

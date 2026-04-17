@@ -1,0 +1,63 @@
+.content {
+  display: flex;
+  margin: 0 auto;
+  background: linear-gradient(35deg, #ffffff, transparent) !important;
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  max-width: 410px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 8%;
+}
+
+.login-form {
+  margin: auto;
+  text-align: center;
+}
+.login-form .logo {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+.login-form h3 {
+  font-family: "Gilroy-ExtraBold", sans-serif !important;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.login-form label {
+  display: block;
+  margin: 5px 0;
+  font-family: "Gilroy-Light", sans-serif;
+  font-weight: 600;
+}
+.login-form input {
+  padding: 8px;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #b4b4b4;
+}
+.login-form button {
+  background-color: #b4b4b4;
+  color: white;
+  font-family: "Gilroy-Light", sans-serif;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.login-form button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 576px) {
+  .content {
+    width: 85%;
+    padding: 3rem 2rem;
+    margin-top: 30%;
+  }
+  .logo {
+    max-width: 250px;
+  }
+}/*# sourceMappingURL=login.css.map */

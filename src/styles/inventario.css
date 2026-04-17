@@ -1,0 +1,13 @@
+h1 {
+  color: beige !important;
+}
+
+main {
+  align-items: start;
+}
+
+@media (max-width: 576px) {
+  .addProduct {
+    margin-left: 75%;
+  }
+}/*# sourceMappingURL=inventario.css.map */
