@@ -73,8 +73,8 @@ const [searchTerm, setSearchTerm] = useState("");
   };
 
   useEffect(() => {
-    getProducts(1);
-  }, []);
+    getProducts(1, searchTerm);
+  }, [searchTerm]);
 
   
 
@@ -116,7 +116,7 @@ const [searchTerm, setSearchTerm] = useState("");
   ) : (
         <Table striped bordered hover responsive='sm' className='table'>
         <thead className='text-center'>
-          <tr className={(products.stock < 5) ? 'bg-blue' : 'bg-white' }>
+          <tr>
             <th scope='col'>Código</th>
             <th scope='col'>Nombre</th>
             <th scope='col'>Precio</th>
@@ -142,7 +142,7 @@ const [searchTerm, setSearchTerm] = useState("");
               
                   </button>
                   <button className="btn btn-danger" onClick={() => handleDelete(p)}>
-                    <i className="bi-trash3-fill"></i>
+                    <i className="bi bi-trash-fill"></i>
 
                   </button>
                 </div>
