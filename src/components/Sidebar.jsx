@@ -1,4 +1,4 @@
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link,  useNavigate } from 'react-router-dom'
 
 
 const Sidebar = () => {
@@ -20,7 +20,7 @@ const Sidebar = () => {
     {rol === "Administrador" ? (
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand"> <img src='logo.png' width={'80px'}/> {name} {lastname}</a>
+    <a class="navbar-brand"> <img alt='' src='logo.png' width={'80px'}/> {name} {lastname}</a>
     
    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +35,10 @@ const Sidebar = () => {
           <Link class="nav-link" to='/inventario'>Inventario</Link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Apartados</a>
+          <Link class="nav-link" to="/dashboard">Apartados</Link>
         </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ventas</a>
+            <Link class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Ventas</Link>
             <ul class="dropdown-menu">
               <li><Link class="dropdown-item" to='/ventas'>Nueva venta</Link></li>
               <li><Link class="dropdown-item" to='/hventas'>Historial de ventas</Link></li>
@@ -46,7 +46,7 @@ const Sidebar = () => {
           </li>
     
         <li class="nav-item">
-          <a class="nav-link" href='/arqueo'>Arqueo de cajas</a>
+          <Link class="nav-link" to='/arqueo'>Arqueo de cajas</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" to='/administracion'>Administración</Link>
@@ -61,7 +61,7 @@ const Sidebar = () => {
 
     ): (        <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand"> <img src='logo.png' width={'80px'}/> {name} {lastname}</a>
+    <a class="navbar-brand"> <img alt='' src='logo.png' width={'80px'}/> {name} {lastname}</a>
     
    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,7 @@ const Sidebar = () => {
       <ul class="navbar-nav ms-auto">
         
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ventas</a>
+            <Link class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ventas</Link>
             <ul class="dropdown-menu">
               <li><Link class="dropdown-item" to='/ventas'>Nueva venta</Link></li>
               <li><Link class="dropdown-item" to='/hventas'>Historial de ventas</Link></li>
@@ -79,7 +79,7 @@ const Sidebar = () => {
           </li>
         
         <li class="nav-item">
-          <a class="nav-link" href='#'>Configuración</a>
+          <Link class="nav-link" to="/dashboard">Configuración</Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link" onClick={() => handleLogout()}>Cerrar sesión</Link>
