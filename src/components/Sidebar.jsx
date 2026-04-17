@@ -1,5 +1,4 @@
-import { Link,  useNavigate } from 'react-router-dom'
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const name = localStorage.getItem("name");
@@ -8,91 +7,151 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-   
-    localStorage.clear()
-
-    
+    localStorage.clear();
     navigate("/", { replace: true });
-  }
+  };
 
   return (
     <>
-    {rol === "Administrador" ? (
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand"> <img alt='' src='logo.png' width={'80px'}/> {name} {lastname}</a>
-    
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <Link class="nav-link" aria-current="page" to="/dashboard">Pedidos</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to='/inventario'>Inventario</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to="/dashboard">Apartados</Link>
-        </li>
-            <li class="nav-item dropdown">
-            <Link class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Ventas</Link>
-            <ul class="dropdown-menu">
-              <li><Link class="dropdown-item" to='/ventas'>Nueva venta</Link></li>
-              <li><Link class="dropdown-item" to='/hventas'>Historial de ventas</Link></li>
-            </ul>
-          </li>
-    
-        <li class="nav-item">
-          <Link class="nav-link" to='/arqueo'>Arqueo de cajas</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" to='/administracion'>Administración</Link>
-        </li>
-        <li class="nav-item">
-          <button className='nav-link btn btn-link' onClick={handleLogout}>Cerrar sesión</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      {rol === "Administrador" ? (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <div className="container-fluid">
+            
+            <span className="navbar-brand">
+              <img alt="logo" src="logo.png" width="80px" /> {name} {lastname}
+            </span>
 
-    ): (        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand"> <img alt='' src='logo.png' width={'80px'}/> {name} {lastname}</a>
-    
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        
-            <li class="nav-item dropdown">
-            <Link class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Ventas</Link>
-            <ul class="dropdown-menu">
-              <li><Link class="dropdown-item" to='/ventas'>Nueva venta</Link></li>
-              <li><Link class="dropdown-item" to='/hventas'>Historial de ventas</Link></li>
-            </ul>
-          </li>
-        
-        <li class="nav-item">
-          <Link class="nav-link" to="/dashboard">Configuración</Link>
-        </li>
-        <li class="nav-item">
-          <Link class="nav-link" onClick={() => handleLogout()}>Cerrar sesión</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>)}
-        
-</>
-    
-    )
-    
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto">
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">Pedidos</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/inventario">Inventario</Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">Apartados</Link>
+                </li>
+
+                <li className="nav-item dropdown">
+                  <span
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    Ventas
+                  </span>
+
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/ventas">Nueva venta</Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/hventas">Historial de ventas</Link>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/arqueo">
+                    Arqueo de cajas
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/administracion">
+                    Administración
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>
+                    Cerrar sesión
+                  </button>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      ) : (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <div className="container-fluid">
+
+            <span className="navbar-brand">
+              <img alt="logo" src="logo.png" width="80px" /> {name} {lastname}
+            </span>
+
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav ms-auto">
+
+                <li className="nav-item dropdown">
+                  <span
+                    className="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    role="button"
+                    aria-expanded="false"
+                  >
+                    Ventas
+                  </span>
+
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link className="dropdown-item" to="/ventas">Nueva venta</Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/hventas">Historial de ventas</Link>
+                    </li>
+                  </ul>
+                </li>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">
+                    Configuración
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <button className="nav-link btn btn-link" onClick={handleLogout}>
+                    Cerrar sesión
+                  </button>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      )}
+    </>
+  );
 };
 
-export default Sidebar
+export default Sidebar;
