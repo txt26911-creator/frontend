@@ -24,21 +24,19 @@ const ModalVerNota = ({show, onHide, idVenta}) => {
 
 useEffect(() => {
   if (!idVenta || !show) return;
+  if (detalleVenta.id_venta === idVenta) return;
 
-  const load = async () => {
-    try {
-      const res = await fetch(
-        `${process.env.REACT_APP_API}/api/ventas/ver/${idVenta}`
-      );
-      const data = await res.json();
-      setDetalleVenta(data);
-      setDetalleProductos(data.detalle || []);
-    } catch (error) {
-      console.error(error);
-    }
+  const fetchData = async () => {
+    const res = await fetch(
+      `${process.env.REACT_APP_API}/api/ventas/ver/${idVenta}`
+    );
+    const data = await res.json();
+
+    setDetalleVenta(data);
+    setDetalleProductos(data.detalle || []);
   };
 
-  load();
+  fetchData();
 }, [idVenta, show]);
 
 const generarTicket = async () => {
