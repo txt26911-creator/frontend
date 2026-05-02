@@ -4,6 +4,7 @@ const Sidebar = () => {
   const name = localStorage.getItem("name");
   const lastname = localStorage.getItem("lastname");
   const rol = localStorage.getItem("rol");
+  const token = localStorage.getItem("token")
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -13,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <>
-      {rol === "Administrador" ? (
+      {rol === "Administrador" && token !== "" ? (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
             

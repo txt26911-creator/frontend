@@ -9,20 +9,7 @@ const ModalVerNota = ({show, onHide, idVenta}) => {
     const [detalleVenta, setDetalleVenta] = useState({})
     const [detalleProductos, setDetalleProductos] = useState([])
 
-       const handleSave = async () => {
-      try {
-        
-        const res = await fetch(`${process.env.REACT_APP_API}/api/ventas/ver/`+idVenta)
-        const data = await res.json();
-        setDetalleVenta(data)
-        setDetalleProductos(data.detalle)
 
-        
-      }
-     catch (error) {
-        console.error(error);
-      }
-    };
     const fechaConHora = (fecha) => {
   if (!fecha) return ""
   const d = new Date(fecha)
@@ -35,10 +22,24 @@ const ModalVerNota = ({show, onHide, idVenta}) => {
 }
 
 
-    useEffect(() => {
-    if (!idVenta || !show) return;
-    handleSave();
-}, [idVenta, show, handleSave])
+useEffect(() => {
+  if (!idVenta || !show) return;
+
+  const load = async () => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_API}/api/ventas/ver/${idVenta}`
+      );
+      const data = await res.json();
+      setDetalleVenta(data);
+      setDetalleProductos(data.detalle || []);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  load();
+}, [idVenta, show]);
 
 const generarTicket = async () => {
     const doc = new jsPDF({
